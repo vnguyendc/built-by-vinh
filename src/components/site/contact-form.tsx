@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,8 +13,15 @@ type ContactFormProps = {
 };
 
 export function ContactForm({ variant = "default", submitLabel = "Send site details", note = "This sends the details directly to vinh@builtbyvinh.com." }: ContactFormProps) {
+  const formId = useId();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState("");
+
+  const nameId = `${formId}-name`;
+  const businessId = `${formId}-business`;
+  const emailId = `${formId}-email`;
+  const websiteId = `${formId}-website`;
+  const messageId = `${formId}-message`;
 
   return (
     <form
@@ -54,32 +61,34 @@ export function ContactForm({ variant = "default", submitLabel = "Send site deta
       <input className="hpField" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <div className="fieldGrid">
         <div className="field">
-          <Label htmlFor="name">Name</Label>
-          <Input id="name" name="name" placeholder="Your name" required />
+          <Label htmlFor={nameId}>Name</Label>
+          <Input id={nameId} name="name" placeholder="Your name" required />
         </div>
         <div className="field">
-          <Label htmlFor="business">Business</Label>
-          <Input id="business" name="business" placeholder="Business name" required />
+          <Label htmlFor={businessId}>Business</Label>
+          <Input id={businessId} name="business" placeholder="Business name" required />
         </div>
       </div>
       <div className="field">
-        <Label htmlFor="email">Email</Label>
-        <Input id="email" name="email" type="email" placeholder="you@business.com" required />
+        <Label htmlFor={emailId}>Email</Label>
+        <Input id={emailId} name="email" type="email" placeholder="you@business.com" required />
       </div>
       <div className="field">
-        <Label htmlFor="website">Website</Label>
-        <Input id="website" name="website" placeholder="yourbusiness.com" />
+        <Label htmlFor={websiteId}>Website</Label>
+        <Input id={websiteId} name="website" placeholder="yourbusiness.com" />
       </div>
       <div className="field">
-        <Label htmlFor="message">What should I look at?</Label>
-        <Textarea id="message" name="message" placeholder="Tell me what feels outdated, confusing, or hard to act on." />
+        <Label htmlFor={messageId}>What should I look at?</Label>
+        <Textarea id={messageId} name="message" placeholder="Tell me what feels outdated, confusing, or hard to act on." />
       </div>
-      <Button type="submit" disabled={status === "sending"}>
+      <Button type="submit" disabled={status === "sending"} aria-busy={status === "sending"}>
         {status === "sending" ? "Sending..." : submitLabel}
       </Button>
-      {status === "sent" ? <p className="formNote successNote">Sent — I’ll reply with the site scan.</p> : null}
-      {status === "error" ? <p className="formNote errorNote">{error}</p> : null}
-      {status === "idle" || status === "sending" ? <p className="formNote">{note}</p> : null}
+      <div aria-live="polite" aria-atomic="true">
+        {status === "sent" ? <p className="formNote successNote">Sent — I’ll reply with the site scan.</p> : null}
+        {status === "error" ? <p className="formNote errorNote" role="alert">{error}</p> : null}
+        {status === "idle" || status === "sending" ? <p className="formNote">{note}</p> : null}
+      </div>
     </form>
   );
 }
