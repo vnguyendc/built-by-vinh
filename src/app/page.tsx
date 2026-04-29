@@ -308,7 +308,7 @@ function Feedback() {
       <div className="wrap">
         <div className="sectionHeader compact">
           <p className="kicker">What people value</p>
-          <h2>Clear thinking. Clean execution.</h2>
+          <h2>What clients say.</h2>
         </div>
         <div className="feedbackGrid">
           {feedback.map(([name, role, quote]) => (
