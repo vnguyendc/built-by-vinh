@@ -7,22 +7,45 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 export function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [error, setError] = useState("");
 
   return (
     <form
       className="contactForm"
-      onSubmit={(event) => {
+      onSubmit={async (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        const subject = encodeURIComponent("Free site scan request");
-        const body = encodeURIComponent(
-          [`Name: ${data.get("name")}`, `Business: ${data.get("business")}`, `Website: ${data.get("website")}`, "", `${data.get("message")}`].join("\n")
-        );
-        setSent(true);
-        window.location.href = `mailto:vinh@builtbyvinh.com?subject=${subject}&body=${body}`;
+        setStatus("sending");
+        setError("");
+
+        const form = event.currentTarget;
+        const data = new FormData(form);
+
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: data.get("name"),
+            business: data.get("business"),
+            email: data.get("email"),
+            website: data.get("website"),
+            message: data.get("message"),
+            company: data.get("company"),
+          }),
+        });
+
+        if (!response.ok) {
+          const result = (await response.json().catch(() => null)) as { error?: string } | null;
+          setError(result?.error ?? "Something went wrong. Email me directly at vinh@builtbyvinh.com.");
+          setStatus("error");
+          return;
+        }
+
+        form.reset();
+        setStatus("sent");
       }}
     >
+      <input className="hpField" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <div className="fieldGrid">
         <div className="field">
           <Label htmlFor="name">Name</Label>
@@ -34,6 +57,10 @@ export function ContactForm() {
         </div>
       </div>
       <div className="field">
+        <Label htmlFor="email">Email</Label>
+        <Input id="email" name="email" type="email" placeholder="you@business.com" required />
+      </div>
+      <div className="field">
         <Label htmlFor="website">Website</Label>
         <Input id="website" name="website" placeholder="yourbusiness.com" />
       </div>
@@ -41,8 +68,12 @@ export function ContactForm() {
         <Label htmlFor="message">What should I look at?</Label>
         <Textarea id="message" name="message" placeholder="Tell me what feels outdated, confusing, or hard to act on." />
       </div>
-      <Button type="submit">Email Vinh the site details</Button>
-      {sent ? <p className="formNote">Opening your email app with the details filled in.</p> : <p className="formNote">This opens an email to vinh@builtbyvinh.com with your details filled in.</p>}
+      <Button type="submit" disabled={status === "sending"}>
+        {status === "sending" ? "Sending..." : "Send site details"}
+      </Button>
+      {status === "sent" ? <p className="formNote successNote">Sent — I’ll reply with the site scan.</p> : null}
+      {status === "error" ? <p className="formNote errorNote">{error}</p> : null}
+      {status === "idle" || status === "sending" ? <p className="formNote">This sends the details directly to vinh@builtbyvinh.com.</p> : null}
     </form>
   );
 }

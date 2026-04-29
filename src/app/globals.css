@@ -236,3 +236,6 @@ figcaption span { display: block; }
 }
 .auditNote { position: static; left: auto; right: auto; bottom: auto; margin: 18px 0 0; }
 .auditLab { min-height: 500px; }
+.hpField { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.successNote { color: var(--accent); }
+.errorNote { color: #ff8f8f; }
