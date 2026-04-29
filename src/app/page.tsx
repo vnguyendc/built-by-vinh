@@ -232,11 +232,11 @@ function CaseStudy() {
         <div className="caseCopy">
           <p className="kicker">Example preview</p>
           <h2>Adam Garage Door concept.</h2>
-          <p>One quick sample direction for a local garage door company: cleaner first screen, stronger service grid, trust signals before the form, and call/quote CTAs repeated in the right places.</p>
+          <p>One quick sample direction for a local garage door company: a bold black-and-gold hero, emergency-first positioning, stronger service cards, trust signals before the form, and call/quote CTAs repeated in the right places.</p>
           <div className="caseBullets">
-            <span>Hero with phone CTA</span>
-            <span>Services made scannable</span>
-            <span>Quote path above the fold</span>
+            <span>Emergency-first hero</span>
+            <span>Phone + quote CTAs</span>
+            <span>Trust and services upfront</span>
           </div>
         </div>
         <div className="casePreview">
