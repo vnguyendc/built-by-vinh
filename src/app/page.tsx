@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { BeforeAfterSlider, UrlAuditLab } from "@/components/site/url-audit-lab";
+import { BeforeAfterSlider } from "@/components/site/url-audit-lab";
 import { ContactForm } from "@/components/site/contact-form";
 import { Button } from "@/components/ui/button";
 
@@ -98,10 +98,10 @@ function Hero() {
           <p className="lede">Clearer trust. Sharper CTAs. Less web clutter.</p>
           <div className="heroActions">
             <Button asChild>
-              <a href="#lab">Get a free site scan</a>
+              <a href="#hero-scan">Get a free site scan</a>
             </Button>
             <Button asChild variant="secondary">
-              <a href="#contact">Email me your site</a>
+              <a href="#example">See an example</a>
             </Button>
           </div>
           <div className="proofStrip" aria-label="Credibility highlights">
@@ -111,7 +111,14 @@ function Hero() {
           </div>
           <p className="cred">Prefer email? Send your site to <a href="mailto:vinh@builtbyvinh.com">vinh@builtbyvinh.com</a>.</p>
         </div>
-        <UrlAuditLab />
+        <div className="heroFormPanel" id="hero-scan">
+          <div className="heroFormHeader">
+            <p className="micro">Free manual site scan</p>
+            <h2>Send your site. I’ll find the leaks.</h2>
+            <p>Get 3 practical fixes for clearer trust, stronger CTAs, and more calls or quote requests. Manual review in 24–48 hours.</p>
+          </div>
+          <ContactForm variant="hero" submitLabel="Get my free site scan" note="No spam. I’ll email the scan to you directly." />
+        </div>
       </div>
     </section>
   );
@@ -370,15 +377,15 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <Offer />
+      <Feedback />
       <CaseStudy />
-      <LabSection />
+      <Offer />
       <Services />
       <Problems />
       <About />
       <Process />
+      <LabSection />
       <Examples />
-      <Feedback />
       <Contact />
     </main>
   );

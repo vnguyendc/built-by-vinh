@@ -6,13 +6,19 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-export function ContactForm() {
+type ContactFormProps = {
+  variant?: "default" | "hero";
+  submitLabel?: string;
+  note?: string;
+};
+
+export function ContactForm({ variant = "default", submitLabel = "Send site details", note = "This sends the details directly to vinh@builtbyvinh.com." }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState("");
 
   return (
     <form
-      className="contactForm"
+      className={`contactForm ${variant === "hero" ? "heroContactForm" : ""}`}
       onSubmit={async (event) => {
         event.preventDefault();
         setStatus("sending");
@@ -69,11 +75,11 @@ export function ContactForm() {
         <Textarea id="message" name="message" placeholder="Tell me what feels outdated, confusing, or hard to act on." />
       </div>
       <Button type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Sending..." : "Send site details"}
+        {status === "sending" ? "Sending..." : submitLabel}
       </Button>
       {status === "sent" ? <p className="formNote successNote">Sent — I’ll reply with the site scan.</p> : null}
       {status === "error" ? <p className="formNote errorNote">{error}</p> : null}
-      {status === "idle" || status === "sending" ? <p className="formNote">This sends the details directly to vinh@builtbyvinh.com.</p> : null}
+      {status === "idle" || status === "sending" ? <p className="formNote">{note}</p> : null}
     </form>
   );
 }

@@ -286,3 +286,30 @@ figcaption span { display: block; }
   .processItem { grid-template-columns: 1fr; gap: 13px; padding: 24px; }
   .processItem strong { justify-self: start; max-width: none; text-align: left; }
 }
+
+.heroFormPanel { min-width: 0; border: 1px solid var(--line); border-radius: 38px; padding: 24px; background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.04)), radial-gradient(circle at 78% 8%, rgba(231,255,88,.22), transparent 32%); box-shadow: 0 40px 130px rgba(0,0,0,.46); }
+.heroFormHeader { padding: 6px 4px 18px; }
+.heroFormHeader h2 { max-width: 470px; margin: 8px 0 12px; font-size: clamp(34px, 4vw, 54px); line-height: .9; }
+.heroFormHeader p:not(.micro) { max-width: 500px; margin: 0; color: rgba(247,243,234,.72); line-height: 1.45; }
+.heroContactForm { padding: 22px; border-radius: 28px; background: rgba(7,8,11,.58); box-shadow: none; }
+.heroContactForm .ui-textarea { min-height: 86px; }
+.heroContactForm .field { margin-bottom: 12px; }
+
+@media (max-width: 900px) {
+  .heroFormPanel { border-radius: 30px; padding: 16px; }
+  .heroFormHeader h2 { font-size: clamp(28px, 8vw, 36px); }
+  .heroContactForm { padding: 16px; }
+}
+.heroFormPanel, .heroContactForm { width: 100%; max-width: 100%; overflow: hidden; }
+.heroFormPanel *, .heroContactForm * { min-width: 0; }
+
+@media (max-width: 900px) {
+  .wrap { overflow-x: clip; }
+  .heroFormPanel { width: 100%; max-width: 100%; }
+  .heroFormHeader, .heroFormHeader h2, .heroFormHeader p { max-width: 100%; overflow-wrap: anywhere; }
+  .heroContactForm .ui-button { width: 100%; }
+}
+
+@media (max-width: 900px) {
+  .heroFormPanel { width: min(100%, 350px); justify-self: center; margin-inline: auto; }
+}
