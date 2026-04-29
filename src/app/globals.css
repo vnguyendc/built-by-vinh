@@ -248,3 +248,22 @@ figcaption span { display: block; }
   .caseBullets { display: grid; grid-template-columns: minmax(0, 1fr); }
   .caseBullets span { width: 100%; text-align: center; }
 }
+
+.servicesSection { background: rgba(255,255,255,.018); }
+.servicesLayout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 68px; align-items: start; }
+.servicesIntro { position: sticky; top: 34px; }
+.servicesIntro p:not(.kicker) { max-width: 430px; margin: 24px 0 0; color: #d0d4dd; font-size: 19px; line-height: 1.55; }
+.serviceStack { border-top: 1px solid var(--line); }
+.serviceRow { display: grid; grid-template-columns: 56px 1fr 190px; gap: 22px; align-items: start; padding: 30px 0; border-bottom: 1px solid var(--line); }
+.serviceRow > span { color: var(--accent); font-size: 13px; font-weight: 950; letter-spacing: .14em; }
+.serviceRow h3 { margin: 0 0 10px; font-size: clamp(28px, 3.2vw, 44px); line-height: .92; letter-spacing: -.06em; }
+.serviceRow p { max-width: 520px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
+.serviceRow strong { justify-self: end; max-width: 170px; color: rgba(247,243,234,.64); font-size: 12px; line-height: 1.35; letter-spacing: .12em; text-align: right; text-transform: uppercase; }
+
+@media (max-width: 900px) {
+  .servicesLayout { grid-template-columns: 1fr; gap: 34px; }
+  .servicesIntro { position: static; }
+  .servicesIntro p:not(.kicker) { font-size: 17px; }
+  .serviceRow { grid-template-columns: 1fr; gap: 12px; padding: 26px 0; }
+  .serviceRow strong { justify-self: start; max-width: none; text-align: left; }
+}

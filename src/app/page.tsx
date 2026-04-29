@@ -3,12 +3,26 @@ import { ArrowRight } from "lucide-react";
 import { BeforeAfterSlider, UrlAuditLab } from "@/components/site/url-audit-lab";
 import { ContactForm } from "@/components/site/contact-form";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
-  ["Website refreshes", "Cleaner pages, sharper CTAs, better mobile flow."],
-  ["Conversion pages", "Pages for high-intent services and local searches."],
-  ["AI workflows", "Simple automations for intake, follow-ups, reviews, and admin."],
+  [
+    "01",
+    "First screen rebuild",
+    "Make the page instantly answer what you do, where you work, why people trust you, and how to call or request a quote.",
+    "Hero · trust · mobile CTA",
+  ],
+  [
+    "02",
+    "Quote path cleanup",
+    "Remove the friction between a ready customer and the next action: call, send photos, book service, or ask for pricing.",
+    "Forms · phone flow · service pages",
+  ],
+  [
+    "03",
+    "Local proof system",
+    "Move reviews, service areas, real photos, and guarantees into the places where hesitation usually happens.",
+    "Reviews · areas · guarantees",
+  ],
 ];
 
 const problems = ["Unclear offer", "Hidden phone", "Late reviews", "Weak quote path"];
@@ -142,22 +156,23 @@ function LabSection() {
 
 function Services() {
   return (
-    <section className="section" id="work">
-      <div className="wrap">
-        <div className="sectionHeader">
-          <p className="kicker">What I build</p>
-          <h2>Websites with a job to do.</h2>
+    <section className="section servicesSection" id="work">
+      <div className="wrap servicesLayout">
+        <div className="servicesIntro">
+          <p className="kicker">What I fix</p>
+          <h2>Better sites for call-driven businesses.</h2>
+          <p>Not a bloated agency redesign. A focused pass on the parts that make someone trust you, call you, or request a quote.</p>
         </div>
-        <div className="serviceGrid">
-          {services.map(([title, copy]) => (
-            <Card className="service" key={title}>
-              <CardHeader>
-                <CardTitle>{title}</CardTitle>
-              </CardHeader>
-              <CardContent>
+        <div className="serviceStack">
+          {services.map(([num, title, copy, meta]) => (
+            <article className="serviceRow" key={title}>
+              <span>{num}</span>
+              <div>
+                <h3>{title}</h3>
                 <p>{copy}</p>
-              </CardContent>
-            </Card>
+              </div>
+              <strong>{meta}</strong>
+            </article>
           ))}
         </div>
       </div>
