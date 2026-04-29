@@ -28,10 +28,24 @@ const services = [
 const problems = ["Unclear offer", "Hidden phone", "Late reviews", "Weak quote path"];
 
 const steps = [
-  ["01", "Preview", "Quick direction from public info."],
-  ["02", "Review", "You mark what feels right or wrong."],
-  ["03", "Build", "I build the polished version."],
-  ["04", "Launch", "We track and improve."],
+  [
+    "01",
+    "Free preview",
+    "I look at the public site and send back the highest-leverage changes: first screen, trust, service clarity, and quote path.",
+    "24–48 hr turnaround",
+  ],
+  [
+    "02",
+    "Fixed-scope refresh",
+    "If it is useful, we choose a focused build: homepage, landing page, or service page. Clear price before anything starts.",
+    "$500–$1,500 starter range",
+  ],
+  [
+    "03",
+    "Launch + tighten",
+    "I ship the page, check mobile, connect the form, and make the first round of copy/layout fixes after you see it live.",
+    "Designed around calls + quotes",
+  ],
 ];
 
 const examples = ["HVAC emergency page", "Plumbing quote flow", "Electrical homepage", "Pest control local page", "Roofing estimate page"];
@@ -220,18 +234,22 @@ function About() {
 
 function Process() {
   return (
-    <section className="section" id="process">
-      <div className="wrap">
-        <div className="sectionHeader compact">
+    <section className="section processSection" id="process">
+      <div className="wrap processLayout">
+        <div className="processIntro">
           <p className="kicker">Process</p>
-          <h2>Preview first. Build what works.</h2>
+          <h2>Start with signal, not a sales call.</h2>
+          <p>I send a useful preview first. If it feels right, we turn it into a small fixed-scope build.</p>
         </div>
-        <div className="processGrid">
-          {steps.map(([num, title, copy]) => (
-            <article className="step" key={num}>
-              <span>{num}</span>
-              <h3>{title}</h3>
-              <p>{copy}</p>
+        <div className="processPanel">
+          {steps.map(([num, title, copy, meta]) => (
+            <article className="processItem" key={num}>
+              <div className="processNum">{num}</div>
+              <div>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </div>
+              <strong>{meta}</strong>
             </article>
           ))}
         </div>
