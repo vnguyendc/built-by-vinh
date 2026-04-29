@@ -313,3 +313,9 @@ figcaption span { display: block; }
 @media (max-width: 900px) {
   .heroFormPanel { width: min(100%, 350px); justify-self: center; margin-inline: auto; }
 }
+.casePreview > img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center; }
+.casePreview { aspect-ratio: 720 / 448; min-height: unset; }
+
+@media (max-width: 900px) {
+  .casePreview { width: min(100%, 350px); justify-self: center; min-height: unset; }
+}
