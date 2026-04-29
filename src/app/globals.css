@@ -177,7 +177,7 @@ figcaption span { display: block; }
 .formNote { margin: 14px 0 0; color: var(--muted); font-size: 13px; }
 
 @media (max-width: 900px) {
-  .wrap { width: 100%; max-width: 1120px; padding-inline: 18px; }
+  .wrap { width: 100%; max-width: 1120px; padding-inline: 30px; }
   .desktopOnly { display: none; }
   .mobileOnly { display: inline; }
   .nav { padding: 20px 0 10px; }
@@ -185,11 +185,14 @@ figcaption span { display: block; }
   .brand img { width: 24px; height: 24px; border-radius: 7px; }
   .navLinks { display: none; }
   .heroGrid, .offerGrid, .labGrid, .problemGrid, .aboutGrid, .examplesGrid, .contactGrid { grid-template-columns: 1fr; gap: 34px; }
-  .heroGrid { min-height: auto; padding: 12px 0 48px; gap: 24px; }
-  h1 { max-width: 330px; font-size: clamp(31px, 8.8vw, 38px); line-height: 1; letter-spacing: -.04em; overflow-wrap: normal; }
-  .eyebrow { font-size: 11px; letter-spacing: .12em; margin-bottom: 14px; }
-  .lede { font-size: 17px; margin-bottom: 0; }
-  .heroActions { margin: 20px 0 12px; gap: 10px; }
+  .hero { padding-inline: 10px; }
+  .heroGrid { min-height: auto; padding: 18px 0 56px; gap: 40px; }
+  .heroCopy { min-height: 66svh; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 42px; }
+  h1 { max-width: 330px; font-size: clamp(31px, 8.8vw, 38px); line-height: 1; letter-spacing: -.04em; overflow-wrap: normal; margin-bottom: 18px; }
+  .eyebrow { font-size: 10px; letter-spacing: .115em; margin-bottom: 14px; }
+  .lede { max-width: 320px; font-size: 16px; margin-bottom: 0; }
+  .heroActions { margin: 24px 0 0; gap: 10px; }
+  .heroActions a[href="#example"] { display: none; }
   .heroActions, .auditInputRow, .fieldGrid { grid-template-columns: 1fr; flex-direction: column; }
   .ui-button { width: 100%; white-space: normal; text-align: center; }
   .heroCopy, .auditLab, .contactForm, .comparisonShell { width: 100%; max-width: 100%; overflow: hidden; }
@@ -228,8 +231,7 @@ figcaption span { display: block; }
 .caseDisclaimer { margin-top: 18px; color: rgba(247,243,234,.46); font-size: 12px; }
 
 @media (max-width: 900px) {
-  .proofStrip { margin-top: 2px; }
-  .proofStrip span { width: 100%; justify-content: center; font-size: 12px; }
+  .proofStrip, .cred { display: none; }
   .caseGrid { grid-template-columns: 1fr; gap: 26px; }
   .casePreview { min-height: 340px; border-radius: 26px; }
   .caseDisclaimer { margin-top: 14px; }
@@ -296,9 +298,11 @@ figcaption span { display: block; }
 .heroContactForm .field { margin-bottom: 12px; }
 
 @media (max-width: 900px) {
-  .heroFormPanel { border-radius: 30px; padding: 16px; }
-  .heroFormHeader h2 { font-size: clamp(28px, 8vw, 36px); }
-  .heroContactForm { padding: 16px; }
+  .heroFormPanel { border-radius: 28px; padding: 14px; }
+  .heroFormHeader { padding: 4px 4px 14px; }
+  .heroFormHeader h2 { font-size: clamp(26px, 7.6vw, 34px); line-height: .96; }
+  .heroFormHeader p:not(.micro) { font-size: 14px; }
+  .heroContactForm { padding: 14px; }
 }
 .heroFormPanel, .heroContactForm { width: 100%; max-width: 100%; overflow: hidden; }
 .heroFormPanel *, .heroContactForm * { min-width: 0; }
