@@ -137,12 +137,12 @@ function Offer() {
     <section className="section offerSection">
       <div className="wrap offerGrid">
         <div>
-          <p className="kicker">The offer</p>
-          <h2>Most service websites leak trust before they ever ask for the job.</h2>
+          <p className="kicker">If you want the fix</p>
+          <h2>A focused refresh for the page that should be producing calls.</h2>
         </div>
         <div className="offerCopy">
           <p>
-            Plumbing, HVAC, electrical, roofing, pest control, and garage door sites usually do not need a bloated redesign. They need the buyer’s path cleaned up: clearer promise, stronger local proof, and one obvious way to call or request a quote.
+            If the scan is useful, the next step is not a giant agency rebuild. It is a fixed-scope homepage, landing page, or service-page refresh that cleans up the buyer’s path: clearer promise, stronger local proof, and one obvious way to call or request a quote.
           </p>
           <div className="offerBlueprint" aria-label="What the refresh improves">
             <div>
@@ -187,9 +187,9 @@ function Services() {
     <section className="section servicesSection" id="work">
       <div className="wrap servicesLayout">
         <div className="servicesIntro">
-          <p className="kicker">What gets rebuilt</p>
-          <h2>The parts of the page that decide whether someone calls.</h2>
-          <p>A focused pass on the moments that matter: first impression, local trust, mobile action, and quote intent.</p>
+          <p className="kicker">What the scan checks</p>
+          <h2>The moments that decide whether someone calls.</h2>
+          <p>The free scan looks for the practical leaks first: first impression, local trust, mobile action, and quote intent.</p>
         </div>
         <div className="serviceStack">
           {services.map(([num, title, copy, meta]) => (
@@ -387,12 +387,12 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <Offer />
-      <CaseStudy />
-      <Services />
       <Problems />
-      <Process />
+      <Services />
       <LabSection />
+      <CaseStudy />
+      <Offer />
+      <Process />
       <Feedback />
       <About />
       <Examples />
