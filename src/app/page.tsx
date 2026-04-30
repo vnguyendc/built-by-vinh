@@ -7,50 +7,56 @@ import { Button } from "@/components/ui/button";
 const services = [
   [
     "01",
-    "Contractor homepage refresh",
-    "Make the first screen instantly answer what you do, where you work, why people trust you, and how to call or request a quote.",
-    "Hero · service area · trust",
+    "First-screen rebuild",
+    "Make the homepage answer the buyer’s first three questions fast: do you handle my problem, do you work near me, and can I trust you?",
+    "Hero · service area · proof",
   ],
   [
     "02",
-    "Call + quote path cleanup",
-    "Remove the friction between a ready customer and the next action: tap to call, send photos, request service, or ask for pricing.",
+    "Call and quote path",
+    "Put the phone number, quote form, photo-upload path, and next step where ready customers can actually find them on mobile.",
     "Click-to-call · forms · mobile flow",
   ],
   [
     "03",
-    "Local SEO foundations",
-    "Clarify services, locations, reviews, real photos, and basic page titles so the site lines up with how local customers search.",
+    "Local search cleanup",
+    "Tighten services, locations, headings, page titles, reviews, and real photos so the page matches how homeowners search.",
     "Services · areas · page titles",
   ],
 ];
 
-const problems = ["Unclear services", "Hidden phone", "Buried reviews", "Weak quote path", "Missing service areas"];
+const problems = [
+  ["01", "Unclear services", "Visitors should not have to hunt to learn what you actually do."],
+  ["02", "Hidden phone", "On mobile, the call path needs to be obvious before they scroll twice."],
+  ["03", "Buried reviews", "Proof works best before hesitation, not after the visitor is already unsure."],
+  ["04", "Weak quote path", "Ready buyers need one clear next step, not five vague contact options."],
+  ["05", "Missing service areas", "Local pages should make location fit impossible to miss."],
+];
 
 const steps = [
   [
     "01",
     "Free manual site scan",
-    "I review the public site and send back the highest-leverage fixes: first screen, service clarity, trust proof, mobile CTA, and quote path.",
+    "I review the public site and send back the highest-leverage fixes: first impression, service clarity, trust proof, mobile CTA, and quote path.",
     "24–48 hr turnaround",
   ],
   [
     "02",
     "Fixed-scope refresh",
-    "If it is useful, we choose a focused build: homepage, landing page, or service page. Clear price before anything starts.",
+    "If the scan is useful, we choose one focused build: homepage, landing page, or service page. Clear price before anything starts.",
     "$500–$1,500 starter range",
   ],
   [
     "03",
     "Launch + tighten",
-    "I ship the page, check mobile, connect the form, clean up basic metadata, and make the first round of copy/layout fixes after you see it live.",
+    "I ship the page, check mobile, connect the form, clean up basic metadata, and make the first polish pass after you see it live.",
     "Built around calls + quotes",
   ],
 ];
 
 const examples = ["HVAC website refresh", "Plumbing quote flow", "Electrical homepage", "Pest control service page", "Roofing estimate page", "Garage door landing page"];
 
-const proofPoints = ["DMV-based software engineer", "Free manual audits in 24–48 hours", "Built for calls, quotes, and local service searches"];
+const proofPoints = ["DMV-based builder", "Manual scan in 24–48 hours", "Built for calls, quotes, and local searches"];
 
 const feedback = [
   [
@@ -94,8 +100,8 @@ function Hero() {
       <div className="heroGrid wrap">
         <div className="heroCopy">
           <p className="eyebrow"><span className="desktopOnly">DMV-based software engineer · contractor and home-service websites</span><span className="mobileOnly">DMV-based · contractor websites</span></p>
-          <h1>Website refreshes for local service businesses that need more calls and quote requests.</h1>
-          <p className="lede">I help contractors and home-service businesses clean up the first screen, trust proof, mobile call path, and local SEO basics.</p>
+          <h1>Make your contractor site easier to trust and faster to contact.</h1>
+          <p className="lede">I help DMV home-service businesses clean up the first screen, trust proof, mobile call path, and local SEO basics.</p>
           <div className="heroActions">
             <Button asChild>
               <a href="#hero-scan">Get a free site scan</a>
@@ -116,7 +122,7 @@ function Hero() {
           <div className="heroFormHeader">
             <p className="micro">Free manual site scan</p>
             <h2>Send your site. I’ll find the leaks.</h2>
-            <p>Get 3 practical fixes for the pages that matter most: what customers see first, how fast they can call or request a quote, and whether the site clearly shows services, service areas, reviews, and credibility.</p>
+            <p>Get 3 practical fixes for what customers see first, how fast they can call or request a quote, and whether your site clearly shows services, areas, reviews, and credibility.</p>
           </div>
           <ContactForm variant="hero" submitLabel="Get my free site scan" note="No spam. I’ll email the scan to you directly." />
         </div>
@@ -132,27 +138,27 @@ function Offer() {
       <div className="wrap offerGrid">
         <div>
           <p className="kicker">The offer</p>
-          <h2>Turn a weak contractor website into a clearer call-and-quote path.</h2>
+          <h2>Most service websites leak trust before they ever ask for the job.</h2>
         </div>
         <div className="offerCopy">
           <p>
-            Most plumbing, HVAC, electrical, roofing, pest control, and garage door sites do not need a bloated redesign. They need a cleaner first screen, sharper proof, better service-area clarity, and a faster path to call or request a quote.
+            Plumbing, HVAC, electrical, roofing, pest control, and garage door sites usually do not need a bloated redesign. They need the buyer’s path cleaned up: clearer promise, stronger local proof, and one obvious way to call or request a quote.
           </p>
-          <div className="offerPoints">
+          <div className="offerBlueprint" aria-label="What the refresh improves">
             <div>
               <span>01</span>
-              <strong>Clarify the first impression</strong>
-              <p>What you do, where you work, and why someone should trust you — visible fast.</p>
+              <strong>First impression</strong>
+              <p>Show what you do, where you work, and why you’re credible before the visitor starts comparing tabs.</p>
             </div>
             <div>
               <span>02</span>
-              <strong>Move proof higher</strong>
-              <p>Reviews, experience, service areas, and credibility should show up before hesitation does.</p>
+              <strong>Trust proof</strong>
+              <p>Move reviews, photos, years in business, guarantees, and service areas into the decision zone.</p>
             </div>
             <div>
               <span>03</span>
-              <strong>Tighten the quote path and local SEO basics</strong>
-              <p>Make the next step obvious on mobile while cleaning up services, locations, page titles, and quote/contact language.</p>
+              <strong>Quote path</strong>
+              <p>Make the next action obvious on mobile while tightening services, locations, titles, and contact language.</p>
             </div>
           </div>
         </div>
@@ -166,9 +172,9 @@ function LabSection() {
     <section className="section labSection" id="lab">
       <div className="wrap labGrid">
         <div>
-          <p className="kicker">The wow factor</p>
-          <h2>See the gap. Then see the sharper version.</h2>
-          <p className="sectionCopy">A quick before/after system for spotting where contractor and home-service sites lose trust, calls, quote requests, and local search clarity.</p>
+          <p className="kicker">The preview</p>
+          <h2>See the leak. Then see the cleaner path.</h2>
+          <p className="sectionCopy">The scan turns vague “the site feels old” feedback into specific fixes a business owner can judge quickly.</p>
         </div>
         <BeforeAfterSlider />
       </div>
@@ -181,9 +187,9 @@ function Services() {
     <section className="section servicesSection" id="work">
       <div className="wrap servicesLayout">
         <div className="servicesIntro">
-          <p className="kicker">What I fix</p>
-          <h2>Website refreshes for contractors, trades, and home-service businesses.</h2>
-          <p>Not a bloated agency redesign. A focused pass on the parts that make someone trust you, understand your service area, call you, or request a quote.</p>
+          <p className="kicker">What gets rebuilt</p>
+          <h2>The parts of the page that decide whether someone calls.</h2>
+          <p>A focused pass on the moments that matter: first impression, local trust, mobile action, and quote intent.</p>
         </div>
         <div className="serviceStack">
           {services.map(([num, title, copy, meta]) => (
@@ -208,13 +214,16 @@ function Problems() {
       <div className="wrap problemGrid">
         <div>
           <p className="kicker">Where leads leak</p>
-          <h2>Small website problems cost real service calls.</h2>
+          <h2>The problems are usually small. The lost jobs are not.</h2>
         </div>
         <div className="problemList">
-          {problems.map((problem) => (
-            <div className="problem" key={problem}>
-              <span />
-              <p>{problem}</p>
+          {problems.map(([num, title, copy]) => (
+            <div className="problem" key={title}>
+              <span>{num}</span>
+              <div>
+                <strong>{title}</strong>
+                <p>{copy}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -232,8 +241,8 @@ function About() {
         </div>
         <div className="aboutCopy">
           <p className="kicker">Who you are talking to</p>
-          <h2>Built by Vinh is run by Vinh Nguyen, a DMV-based software engineer with Amazon and large-company experience.</h2>
-          <p>I build practical websites for local businesses that care more about booked jobs than fancy agency theater.</p>
+          <h2>A software engineer, not another vague marketing shop.</h2>
+          <p>I’m Vinh Nguyen — DMV-based, Amazon-trained, and focused on practical websites for local businesses that care about booked jobs.</p>
         </div>
       </div>
     </section>
@@ -246,8 +255,8 @@ function Process() {
       <div className="wrap processLayout">
         <div className="processIntro">
           <p className="kicker">Process</p>
-          <h2>Start with a useful site scan, not a bloated agency pitch.</h2>
-          <p>I send practical notes first. If they are useful, we turn the best fixes into a small fixed-scope build.</p>
+          <h2>Start with proof of value, not a discovery-call maze.</h2>
+          <p>You get useful notes first. If they make sense, we turn the best fixes into a small fixed-scope build.</p>
         </div>
         <div className="processPanel">
           {steps.map(([num, title, copy, meta]) => (
@@ -272,8 +281,8 @@ function CaseStudy() {
       <div className="wrap caseGrid">
         <div className="caseCopy">
           <p className="kicker">Example preview</p>
-          <h2>Adam Garage Door concept.</h2>
-          <p>One sample direction for a local garage door company: a cleaner full-bleed hero, immediate quote and call CTAs, service proof near the top, clearer local positioning, and a warmer owner-operated feel.</p>
+          <h2>What a sharper local page can feel like.</h2>
+          <p>A sample direction for a garage door company: full-bleed local imagery, immediate quote and call CTAs, proof near the top, and a warmer owner-operated feel.</p>
           <div className="caseBullets">
             <span>Full-bleed local hero</span>
             <span>Phone + quote CTAs</span>
@@ -295,7 +304,7 @@ function Examples() {
       <div className="wrap examplesGrid">
         <div>
           <p className="kicker">Example directions</p>
-          <h2>Built for search-driven, phone-driven local services.</h2>
+          <h2>Use the same system across high-intent service pages.</h2>
         </div>
         <div className="exampleList">
           {examples.map((example) => (
@@ -315,8 +324,8 @@ function Feedback() {
     <section className="section feedback">
       <div className="wrap">
         <div className="sectionHeader compact">
-          <p className="kicker">What people value</p>
-          <h2>What clients say.</h2>
+          <p className="kicker">Proof</p>
+          <h2>Recent work. Real outcomes.</h2>
         </div>
         <div className="feedbackGrid">
           {feedback.map(([name, role, quote]) => (
@@ -340,8 +349,8 @@ function Contact() {
     <section className="finalCta" id="contact">
       <div className="wrap contactGrid">
         <div>
-          <p className="kicker">Want a free site scan?</p>
-          <h2>Send your site. I’ll show you where calls and quote requests are leaking.</h2>
+          <p className="kicker">Free site scan</p>
+          <h2>Send the site. I’ll send back the first 3 fixes I’d make.</h2>
         </div>
         <ContactForm />
       </div>
@@ -378,14 +387,14 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <Feedback />
-      <CaseStudy />
       <Offer />
+      <CaseStudy />
       <Services />
       <Problems />
-      <About />
       <Process />
       <LabSection />
+      <Feedback />
+      <About />
       <Examples />
       <Contact />
     </main>
