@@ -34,28 +34,33 @@ export function ContactForm({ variant = "default", submitLabel = "Send site deta
         const form = event.currentTarget;
         const data = new FormData(form);
 
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: data.get("name"),
-            business: data.get("business"),
-            email: data.get("email"),
-            website: data.get("website"),
-            message: data.get("message"),
-            company: data.get("company"),
-          }),
-        });
+        try {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: data.get("name"),
+              business: data.get("business"),
+              email: data.get("email"),
+              website: data.get("website"),
+              message: data.get("message"),
+              company: data.get("company"),
+            }),
+          });
 
-        if (!response.ok) {
-          const result = (await response.json().catch(() => null)) as { error?: string } | null;
-          setError(result?.error ?? "Something went wrong. Email me directly at vinh@builtbyvinh.com.");
+          if (!response.ok) {
+            const result = (await response.json().catch(() => null)) as { error?: string } | null;
+            setError(result?.error ?? "Something went wrong. Email me directly at vinh@builtbyvinh.com.");
+            setStatus("error");
+            return;
+          }
+
+          form.reset();
+          setStatus("sent");
+        } catch {
+          setError("Connection issue. Please try again or email me directly at vinh@builtbyvinh.com.");
           setStatus("error");
-          return;
         }
-
-        form.reset();
-        setStatus("sent");
       }}
     >
       <input className="hpField" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
