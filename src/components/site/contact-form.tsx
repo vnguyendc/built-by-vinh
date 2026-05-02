@@ -21,6 +21,7 @@ export function ContactForm({ variant = "default", submitLabel = "Send site deta
   const businessId = `${formId}-business`;
   const emailId = `${formId}-email`;
   const websiteId = `${formId}-website`;
+  const websiteNoteId = `${formId}-website-note`;
   const messageId = `${formId}-message`;
 
   return (
@@ -79,8 +80,17 @@ export function ContactForm({ variant = "default", submitLabel = "Send site deta
         <Input id={emailId} name="email" type="email" placeholder="you@business.com" required />
       </div>
       <div className="field">
-        <Label htmlFor={websiteId}>Website</Label>
-        <Input id={websiteId} name="website" placeholder="yourbusiness.com" />
+        <Label htmlFor={websiteId}>Website URL</Label>
+        <Input
+          id={websiteId}
+          name="website"
+          placeholder="yourbusiness.com"
+          inputMode="url"
+          autoComplete="url"
+          aria-describedby={websiteNoteId}
+          required
+        />
+        <p className="fieldHint" id={websiteNoteId}>Needed for the free scan. No http:// required.</p>
       </div>
       <div className="field">
         <Label htmlFor={messageId}>What should I look at?</Label>
