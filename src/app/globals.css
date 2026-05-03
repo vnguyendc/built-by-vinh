@@ -33,6 +33,10 @@ body::before {
   z-index: -1;
 }
 a { color: inherit; text-decoration: none; }
+:where(a, button, input, textarea):focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
 .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 .mobileOnly { display: none; }
 
@@ -350,4 +354,14 @@ figcaption span { display: block; }
 
 @media (max-width: 900px) {
   .casePreview { width: min(100%, 350px); justify-self: center; min-height: unset; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
