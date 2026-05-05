@@ -24,8 +24,6 @@ export function ContactForm({ variant = "default", submitLabel = "Send site deta
   const websiteNoteId = `${formId}-website-note`;
   const messageId = `${formId}-message`;
 
-  console.log("Built by Vinh DNS transfer smoke test 2026-05-04");
-
   return (
     <form
       className={`contactForm ${variant === "hero" ? "heroContactForm" : ""}`}
