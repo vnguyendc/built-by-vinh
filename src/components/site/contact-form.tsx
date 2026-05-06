@@ -68,16 +68,16 @@ export function ContactForm({ variant = "default", submitLabel = "Send site deta
       <div className="fieldGrid">
         <div className="field">
           <Label htmlFor={nameId}>Name</Label>
-          <Input id={nameId} name="name" placeholder="Your name" required />
+          <Input id={nameId} name="name" placeholder="Your name" autoComplete="name" required />
         </div>
         <div className="field">
           <Label htmlFor={businessId}>Business</Label>
-          <Input id={businessId} name="business" placeholder="Business name" required />
+          <Input id={businessId} name="business" placeholder="Business name" autoComplete="organization" required />
         </div>
       </div>
       <div className="field">
         <Label htmlFor={emailId}>Email</Label>
-        <Input id={emailId} name="email" type="email" placeholder="you@business.com" required />
+        <Input id={emailId} name="email" type="email" placeholder="you@business.com" autoComplete="email" required />
       </div>
       <div className="field">
         <Label htmlFor={websiteId}>Website URL</Label>
