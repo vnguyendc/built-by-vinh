@@ -87,7 +87,7 @@ function Nav() {
         <a href="#lab">Lab</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
-        <a className="navCta" href="#lab">Free site scan</a>
+        <a className="navCta" href="#hero-scan">Free site scan</a>
       </div>
     </nav>
   );
