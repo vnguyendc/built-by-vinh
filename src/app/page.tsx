@@ -89,6 +89,9 @@ function Nav() {
         <a href="#contact">Contact</a>
         <a className="navCta" href="#hero-scan">Free site scan</a>
       </div>
+      <a className="mobileNavCta" href="#hero-scan" aria-label="Jump to the free site scan form">
+        Free scan
+      </a>
     </nav>
   );
 }
