@@ -40,8 +40,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  if (!name || !business || !email || !isEmail(email)) {
-    return NextResponse.json({ error: "Name, business, and a valid email are required." }, { status: 400 });
+  if (!name || !business || !email || !isEmail(email) || !website) {
+    return NextResponse.json({ error: "Name, business, website, and a valid email are required." }, { status: 400 });
   }
 
   const gmailUser = process.env.GMAIL_USER;
