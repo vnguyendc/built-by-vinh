@@ -77,7 +77,17 @@ export function ContactForm({ variant = "default", submitLabel = "Send site deta
       </div>
       <div className="field">
         <Label htmlFor={emailId}>Email</Label>
-        <Input id={emailId} name="email" type="email" placeholder="you@business.com" autoComplete="email" required />
+        <Input
+          id={emailId}
+          name="email"
+          type="email"
+          placeholder="you@business.com"
+          autoComplete="email"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
+          required
+        />
       </div>
       <div className="field">
         <Label htmlFor={websiteId}>Website URL</Label>
@@ -87,6 +97,9 @@ export function ContactForm({ variant = "default", submitLabel = "Send site deta
           placeholder="yourbusiness.com"
           inputMode="url"
           autoComplete="url"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
           aria-describedby={websiteNoteId}
           required
         />
