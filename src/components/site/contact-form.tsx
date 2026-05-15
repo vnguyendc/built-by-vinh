@@ -106,8 +106,9 @@ export function ContactForm({ variant = "default", submitLabel = "Send site deta
         <p className="fieldHint" id={websiteNoteId}>Needed for the free scan. No http:// required.</p>
       </div>
       <div className="field">
-        <Label htmlFor={messageId}>What should I look at?</Label>
+        <Label htmlFor={messageId}>What should I look at? <span className="labelOptional">Optional</span></Label>
         <Textarea id={messageId} name="message" placeholder="Tell me what feels outdated, confusing, or hard to act on." />
+        <p className="fieldHint">A website URL is enough if you want me to choose what to audit first.</p>
       </div>
       <Button type="submit" disabled={status === "sending"} aria-busy={status === "sending"}>
         {status === "sending" ? "Sending..." : submitLabel}
