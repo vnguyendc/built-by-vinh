@@ -384,7 +384,8 @@ const jsonLd = {
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
+      <a className="skipLink" href="#hero-scan">Skip to free site scan</a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
