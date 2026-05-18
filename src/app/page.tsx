@@ -293,7 +293,7 @@ function CaseStudy() {
           </div>
         </div>
         <div className="casePreview">
-          <Image src="/adam-garage-door-scroll.gif" alt="Scrolling Adam Garage Door website preview concept" fill sizes="(max-width: 900px) 92vw, 560px" unoptimized />
+          <Image src="/adam-garage-door-preview.png" alt="Adam Garage Door website preview concept" fill sizes="(max-width: 900px) 92vw, 560px" />
         </div>
       </div>
       <p className="wrap caseDisclaimer">Example preview only; not affiliated with Adam Garage Door.</p>
