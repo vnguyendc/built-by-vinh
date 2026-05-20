@@ -367,4 +367,6 @@ figcaption span { display: block; }
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+  .ui-button:hover { transform: none; }
+  .scanLine[data-active="true"]::after { animation: none; opacity: 0; }
 }
