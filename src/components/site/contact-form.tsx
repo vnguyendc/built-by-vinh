@@ -113,7 +113,7 @@ export function ContactForm({ variant = "default", submitLabel = "Send site deta
         {status === "sending" ? "Sending..." : submitLabel}
       </Button>
       <div aria-live="polite" aria-atomic="true">
-        {status === "sent" ? <p className="formNote successNote">Sent — I’ll reply with the site scan.</p> : null}
+        {status === "sent" ? <p className="formNote successNote">Sent — I’ll reply with the site scan in 24–48 hours.</p> : null}
         {status === "error" ? <p className="formNote errorNote" role="alert">{error}</p> : null}
         {status === "idle" || status === "sending" ? <p className="formNote">{note}</p> : null}
       </div>
