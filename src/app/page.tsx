@@ -384,22 +384,25 @@ const jsonLd = {
 
 export default function Home() {
   return (
-    <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Hero />
-      <Problems />
-      <Services />
-      <LabSection />
-      <CaseStudy />
-      <Offer />
-      <Process />
-      <Feedback />
-      <About />
-      <Examples />
-      <Contact />
-    </main>
+    <>
+      <a className="skipLink" href="#main-content">Skip to main content</a>
+      <main id="main-content">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <Hero />
+        <Problems />
+        <Services />
+        <LabSection />
+        <CaseStudy />
+        <Offer />
+        <Process />
+        <Feedback />
+        <About />
+        <Examples />
+        <Contact />
+      </main>
+    </>
   );
 }
