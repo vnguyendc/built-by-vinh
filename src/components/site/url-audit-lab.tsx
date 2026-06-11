@@ -97,7 +97,7 @@ export function BeforeAfterSlider() {
           <span>After</span>
           <h3>Clearer. Faster. Easier to contact.</h3>
           <p>Strong CTA. Reviews early. Mobile quote path.</p>
-          <button>Request a quote <ArrowRight size={15} /></button>
+          <span className="mockButton" aria-hidden="true">Request a quote <ArrowRight size={15} /></span>
           <div className="proofDots"><i /><i /><i /></div>
         </div>
         <div className="comparisonDivider" aria-hidden="true" />

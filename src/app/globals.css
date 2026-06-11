@@ -146,7 +146,7 @@ h2 { font-size: clamp(38px, 6vw, 78px); line-height: .9; letter-spacing: -.07em;
 .beforeSite { background: linear-gradient(145deg,#111827,#05070a); color: #d6d7d9; }
 .afterSite { clip-path: inset(0 calc(100% - var(--split)) 0 0); background: radial-gradient(circle at 72% 20%, rgba(231,255,88,.5), transparent 34%), #e7ff58; color: var(--ink); }
 .afterSite p { color: rgba(16,19,24,.72); }
-.afterSite button { display: inline-flex; align-items: center; gap: 8px; border: 0; border-radius: 999px; padding: 13px 16px; background: var(--ink); color: var(--text); font-weight: 850; }
+.mockButton { display: inline-flex; align-items: center; gap: 8px; border: 0; border-radius: 999px; padding: 13px 16px; background: var(--ink); color: var(--text); font-weight: 850; }
 .fakeBlock { width: 70%; height: 18px; border-radius: 99px; background: rgba(255,255,255,.14); margin-top: 16px; }
 .fakeBlock.short { width: 45%; }.fakeBlock.tiny { width: 28%; }
 .proofDots { display: flex; gap: 8px; margin-top: 24px; }.proofDots i { width: 44px; height: 44px; border-radius: 50%; background: rgba(16,19,24,.18); }
