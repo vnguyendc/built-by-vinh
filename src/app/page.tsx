@@ -240,7 +240,7 @@ function About() {
     <section className="section about">
       <div className="wrap aboutGrid">
         <div className="portraitWrap">
-          <Image src="/vinh-headshot.jpg" alt="Vinh Nguyen" fill sizes="(max-width: 800px) 90vw, 420px" priority />
+          <Image src="/vinh-headshot.jpg" alt="Vinh Nguyen" fill sizes="(max-width: 800px) 90vw, 420px" />
         </div>
         <div className="aboutCopy">
           <p className="kicker">Who you are talking to</p>
